@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import './Nav.css';
 
 
-const Nav = ({authStatus}) => {
+const Nav = ({authStatus, signoutHandler}) => {
     let login;
     authStatus ?
-        login = <NavLink exact to='/signout' className="link dim white dib mr3" activeStyle={{ textDecoration: 'underline' }}>Sign out</NavLink> :
+        login = <NavLink exact to='/signedOut' className="link dim white dib mr3" activeStyle={{ textDecoration: 'underline' }} onClick={signoutHandler}>Sign out</NavLink> :
         login = <NavLink exact to='/signin' className="link dim white dib mr3" activeStyle={{ textDecoration: 'underline' }}>Sign In</NavLink>
     return(
         <header className="tr w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
