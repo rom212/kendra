@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './nav/Nav';
 import SignedOut from './signedOut/SignedOut';
 import SignIn from './signIn/SignIn';
+import Home from './home/Home';
 import PasswordReset from './passwordReset/PasswordReset';
 import SuccessfullyReset from './passwordReset/SuccessfullyReset';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -37,6 +38,10 @@ class App extends Component {
             <Route exact path='/successfullyreset' component={SuccessfullyReset} />
             <Route exact path='/signIn' render={(props)=>(
               <SignIn {...props} signinHandler={this.signinHandler} />
+              )}
+            />
+            <Route exact path='/' render={(props)=>(
+              <Home {...props} rootstate={this.state} />
               )}
             />
             <Route exact path='/passwordreset' component={PasswordReset} />
