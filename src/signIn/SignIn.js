@@ -62,6 +62,7 @@ class SignIn extends Component {
 
 
     render () {
+        console.log("rendering");
         if (this.state.redirect) {
             return <Redirect to="/" />
         } else if (this.state.passwordReset) {
