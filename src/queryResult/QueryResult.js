@@ -7,9 +7,7 @@ class QueryResult extends Component {
     }
     
     componentDidUpdate = (prevProps) => {
-        // Typical usage (don't forget to compare props):
         if (this.props.input !== prevProps.input) {
-            console.log(`https://jsonplaceholder.typicode.com/posts/${this.props.input}`);
             fetch(`https://jsonplaceholder.typicode.com/posts/${this.props.input}`)
             .then(response=>response.json())
             .then(data=>this.setState({result:data.body}))
@@ -17,9 +15,10 @@ class QueryResult extends Component {
       }
 
     render () {
+        console.log(this.props.accessToken);
         return (
             <div>
-                <main className="pa4 white measure center">
+                <main className="pa4 white measure-wide center">
                     <h4>
                         {this.state.result}
                     </h4>
