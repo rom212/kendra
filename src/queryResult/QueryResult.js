@@ -8,9 +8,11 @@ class QueryResult extends Component {
     
     componentDidUpdate = (prevProps) => {
         if (this.props.input !== prevProps.input) {
-            fetch(`https://jsonplaceholder.typicode.com/posts/${this.props.input}`)
+            // fetch(`https://jsonplaceholder.typicode.com/posts/${this.props.input}`)
+            fetch(`https://nmxnk8j7ka.execute-api.us-east-1.amazonaws.com/dev/kendraquery?query=${encodeURIComponent(this.props.input)}`)
             .then(response=>response.json())
-            .then(data=>this.setState({result:data.body}))
+            .then(data=>this.setState({result:data.result}))
+            .catch(err=> console.log(err))
         }
       }
 
