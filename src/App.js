@@ -13,6 +13,7 @@ class App extends Component {
   state = {
     isLoggedIn: false,
     accessToken: "",
+    idToken: "",
     refreshToken: ""
   }
   
@@ -21,8 +22,8 @@ class App extends Component {
     console.log(this.state);
   }
 
-  signinHandler = (accessToken, refreshToken) => {
-    this.setState({isLoggedIn: true, accessToken: accessToken, refreshToken: refreshToken});
+  signinHandler = (accessToken, refreshToken, idToken) => {
+    this.setState({isLoggedIn: true, accessToken: accessToken, refreshToken: refreshToken, idToken: idToken});
   }
 
   render() {

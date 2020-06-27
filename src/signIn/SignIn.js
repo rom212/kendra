@@ -45,7 +45,7 @@ class SignIn extends Component {
             onSuccess: (data) => {
                 console.log("success", data);
                 console.log(data.accessToken.jwtToken);
-                this.props.signinHandler(data.accessToken.jwtToken, data.refreshToken.token);
+                this.props.signinHandler(data.accessToken.jwtToken, data.refreshToken.token, data.idToken.jwtToken);
                 this.setState({redirect: true});
 
             },

@@ -51,7 +51,7 @@ class Home extends Component {
                         </div>
                     </form>
                 </main>
-                <QueryResult input={this.state.queryInput} accessToken={this.props.rootstate.accessToken}/>
+                <QueryResult input={this.state.queryInput} idToken={this.props.rootstate.idToken}/>
             </div>
         )
     }
